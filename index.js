@@ -7,7 +7,6 @@ const mongoose = require("mongoose")
 const fs = require('fs');
 const PORT = process.env.PORT || 8000
 const adduserRoute = require('./routers/adduserRoute');
-const productGridRoute = require('./routers/productGridRoute')
 const morgan = require("morgan");
 const Adduser = require("./models/adduser");
 const DB_CONNECTION = process.env.DB_CONNECTION
@@ -20,7 +19,7 @@ app.use(cors())
 app.use(morgan('dev'))
 
 app.use('/', adduserRoute);
-app.use('/', productGridRoute);
+
 
 // const filedata = JSON.parse(fs.readFileSync(`${__dirname}/apidata/adduser.json`));
 // const data = async () =>{
